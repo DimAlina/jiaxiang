@@ -22,7 +22,7 @@
   </div>
   <div id="nav">
     <h2>Navigation</h2>
-    <ul>
+    <ul id="list">
       <li><a href="index.html">页面</a></li>
       <li><a href="video/视频.mp4">视频介绍</a></li>
       <li><a href="food.html">美食</a></li>
@@ -31,6 +31,9 @@
       <li><a href="#">还没加的</a></li>
       <li><a href="#">还没加的</a></li>
     </ul>
+    <input type="text" class="txtbox" id="api">
+    <button onclick="addList()" class="button">添加个页</button> 
+    <button onclick="delList()" class="button">删除个页</button>
   </div>
   <div id="cont">
     <h2>1868年</h2>
@@ -48,5 +51,26 @@
   </div>
   <div id="ftr">Design by 得力 2022</div>
 </div>
+  
+<script type="text/javascript">
+
+function addList() {
+  var a = document.getElementById("list");
+  var api = document.getElementById("api");
+  var li = document.createElement("li");
+  li.setAttribute('id', api.value);
+  li.appendChild(document.createTextNode(api.value));
+  a.appendChild(li);
+}
+ 
+function delList() {
+  var a = document.getElementById("list");
+  var api = document.getElementById("api");
+  var item = document.getElementById(api.value);
+  a.removeChild(item);
+}
+
+</script>
+  
 </body>
 </html>
