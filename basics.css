@@ -130,3 +130,15 @@ padding: 0 0 5px 5px;
     float: left;
     z-index: 0;
 }
+
+.txtbox {
+    width: 100px;
+    padding: 2px;
+}
+
+.button {
+    border-color: green;
+    background-color: sandybrown;
+    padding: 3px 3px;
+    font-size: 13px;
+}
