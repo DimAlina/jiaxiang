@@ -142,3 +142,11 @@ padding: 0 0 5px 5px;
     padding: 3px 3px;
     font-size: 13px;
 }
+
+.button1 {
+    border-color: green;
+    background-color: sandybrown;
+    padding: 0.5px 0.5px;
+    font-size: 13px;
+    margin-left: 10px;
+}
