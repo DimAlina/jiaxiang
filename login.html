@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+        <form name="frm1" method="post" onsubmit="loginCheck()">
+            <p>UserName:<input type="text" name="username"/></p>
+            <p>Password:<input type="password" name="password"/></p>
+            <p>
+                <input type="submit" value="Login"/>
+                <input type="reset" value="Reset"/>
+            </p>
+        </form>
+</body>
+
+<script language="JavaScript" type="text/javascript">
+    function setCookie(name, value, expires, path, domain, secure) {
+        var curcookie = name + "=" + encodeURI(value)
+                        +((expires) ? ";expires=" + expires.toGMTString() : "")
+                        +((path) ? ";path=" + path : "")
+                        +((domain) ? ";domain=" + domain : "")
+                        +((secure) ? ";secure" : "");
+        document.cookie = curcookie;
+    }            
+    
+    function getCookie(name) {
+        if(document.cookie.length > 0) {
+            start = document.cookie.indexOf(name + "=");
+            if( start != -1) {
+                start = start + name.length + 1;
+                end = document.cookie.indexOf(";",start);
+                if( end == -1) {
+                    end = document.cookie.length;
+                }
+            }
+            return decodeURI(document.cookie.substring(start,end));
+        }
+        return "";
+    }
+    
+    function loginCheck() {
+        var name = document.frm1.username.value;
+        var pass = document.frm1.password.value;
+        if( name == "zghlx" && pass == "123" ) {
+            var login = true;
+            var now = new Date();
+            now.setDate( now.getDate() + 30);
+            setCookie("login",login,now);
+            window.location.href = "index.html";
+        }
+    }
+    
+    function userlogin() {
+        var login = getCookie("login");
+        if ( login != null && login != "" ) {
+            alert("Welcome...");
+            window.location.href = "index.html";
+        }
+    }
+    
+    userlogin();
+</script>
+</html>
