@@ -1,4 +1,8 @@
-
+.span {
+    position: relative;
+    font-weight: bold;
+    left: 1%;
+}
 body {
  margin: 40px 0;
  color: #333;
@@ -149,4 +153,12 @@ padding: 0 0 5px 5px;
     padding: 0.5px 0.5px;
     font-size: 13px;
     margin-left: 10px;
+}
+.button2 {
+    border-color: green;
+    background-color: sandybrown;
+    padding: 3px 3px;
+    font-size: 13px;
+    position: relative;
+    left: 70%;
 }
