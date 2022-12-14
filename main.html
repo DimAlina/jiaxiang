@@ -7,7 +7,6 @@
 <link rel="stylesheet" type="text/css" href="basics.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="js/slider.js"></script>
-<script src="js/login_cookie.js"></script>
 </head>
 <body>
   <div class="slider-box">
@@ -20,8 +19,9 @@
 <div id="outer">
   <div id="hdr">
     <h1>Kostanay (科斯塔奈)</h1>
-    <a onclick="removeCookie(tabs);" href="index.html">退出</a>
   </div>
+  <span class="span" id="welcome"></span>
+  <button class="button2" onclick="window.location.href='index.html'">Logout</button>
   <div id="nav">
     <h2>Navigation</h2>
     <ul id="list">
@@ -54,8 +54,10 @@
 </div>
   
 <script type="text/javascript">
-        let cookieStr =document.cookie;
-        console.log('manage',cookieStr);
+
+window.onload = function () {
+  document.getElementById("welcome").innerHTML = "登录为：" + localStorage.getItem("name");
+}
 
 let addBtn = document.getElementById("add");
 addBtn.addEventListener("click", function() {
@@ -73,13 +75,7 @@ addBtn.addEventListener("click", function() {
   })
 })
 
-function removeCookie(tabs) {
-  let removing = browser.cookies.remove({
-    url: tabs[0].url,
-    name: "username"
-  });
-}
 </script>
-  
+
 </body>
 </html>
