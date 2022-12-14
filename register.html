@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <div class="container" id="regDiv">
+    <form role="form" id="reg" method="post">
+        
+          <h1>欢迎注册</h1>
+          <div>
+            <label for="name">用户名</label>
+            <div>
+              <input type="text" class="input" name="name" id="name" placeholder="请设置用户名" required>
+            </div>
+          </div>
+          <div>
+            <label for="email">电子邮箱</label>
+            <div>
+              <input type="Email" class="input" name="email" id="email" placeholder="E-Mail@example.com" required>
+            </div>
+          </div>
+          <div>
+            <label for="password">密码</label>
+            <div>
+              <input type="password" class="input" name="pwd" id="pwd" placeholder="请设置登录密码" required>
+            </div>
+          </div>
+          <button type="button" class="btn" id="signup" onclick="register();">注册</button>
+          <input type="button" class="btn1" onclick="location.href='/'" value="退回">
+        
+    </form>
+  </div>
+    
+<script src="js/main.js"></script>
+</body>
+</html>
